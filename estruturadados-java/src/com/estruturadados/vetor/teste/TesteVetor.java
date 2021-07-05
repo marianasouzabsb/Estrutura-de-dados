@@ -25,9 +25,8 @@ public class TesteVetor {
 
 		System.out.println("Tamanho do Vetor: " + vetor.tamanho());
 		System.out.println(vetor.toString());
-		System.out.println(vetor.busca(3));
-		
-		System.out.println(vetor.busca2("elemento 2"));
+		System.out.println("Busca por indice: " + vetor.busca(3));
+		System.out.println("Busca por elemento: " + vetor.busca2("elemento 2"));
 	}
 
 }
