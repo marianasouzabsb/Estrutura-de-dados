@@ -1,20 +1,20 @@
-package com.estruturadados.vetor;
+package com.estruturadados.lista;
 
+public class ListaGeneric<T> {
 
-public class Vetor {
-
-	private String[] elementos;
+	//
+	private T[] elementos;
 	private int tamanho;
 
-	// Construtor
-	public Vetor(int capacidade) {
-		this.elementos = new String[capacidade];
+	// Construtor // Solução do livro Effective java
+	public ListaGeneric(int capacidade) {
+		this.elementos = (T[]) new Object[capacidade];
 		this.tamanho = 0;
 	}
 
 	//Metodo que adiciona dado no vetor	 
 
-	public void adiciona1(String elemento) {
+	public void adiciona1(T elemento) {
 		for(int i = 0; i < this.elementos.length; i++) {
 			if (this.elementos[i] == null)  { 
 				this.elementos[i] = elemento; break; 
@@ -24,14 +24,14 @@ public class Vetor {
 
 	//Método de busca de elemento por posição
 
-	public String busca(int posicao) {
+	public Object busca(int posicao) {
 		if(!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posição inválida");
 		}
 		return this.elementos[posicao];
 	}
 
-	public int busca2(String elemento) {
+	public int busca2(T elemento) {
 		for(int i = 0; i < this.tamanho;i++) {
 			if(this.elementos[i].equals(elemento)) {
 				return i;
@@ -41,7 +41,7 @@ public class Vetor {
 
 	//Metodo que adiciona dado no vetor	sem percorrer todo o vetor
 
-	public void adiciona(String elemento) throws Exception {
+	public void adiciona(T elemento) throws Exception {
 		this.aumentaCapacidade();
 		if(this.tamanho < this.elementos.length) {
 			this.elementos[this.tamanho] = elemento;
@@ -77,7 +77,7 @@ public class Vetor {
 
 	//Metodo elemento em qualquer posicao do vetor
 
-	public boolean adiciona3(int posicao,String elemento) {
+	public boolean adiciona3(int posicao,T elemento) {
 
 		if(!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posição inválida");
@@ -97,7 +97,7 @@ public class Vetor {
 	private void aumentaCapacidade(){
 		if(this.tamanho == this.elementos.length) {
 
-			String[] elementoNovos = new String[this.elementos.length * 2];
+			T[] elementoNovos = (T[])new Object[this.elementos.length * 2];
 			for (int i = 0; i < this.elementos.length; i ++) {
 				elementoNovos[i] = this.elementos[i];
 			}
@@ -117,5 +117,4 @@ public class Vetor {
 		}
 		this.tamanho--;
 	}
-	//	
 }

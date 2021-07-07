@@ -1,5 +1,6 @@
 package com.estruturadados.vetor.teste;
 
+
 import com.estruturadados.vetor.Vetor;
 
 public class TesteVetor {
@@ -11,6 +12,7 @@ public class TesteVetor {
 	 * 0; i++; }
 	 */
 
+	
 	public static void main(String[] args)  {
 
 		Vetor vetor = new Vetor(10);

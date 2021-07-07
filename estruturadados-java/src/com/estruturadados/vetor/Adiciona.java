@@ -6,8 +6,7 @@ public class Adiciona {
 		
 		//Adiciona um elemento em qualquer posicao do Vetor
 		
-		Vetor vetor = new Vetor(10);
-		
+		Vetor vetor = new Vetor(3);
 		
 		try {
 			vetor.adiciona("B");
@@ -18,20 +17,8 @@ public class Adiciona {
 			
 			System.out.println(vetor);
 			
-			
-			vetor.adiciona3(0, "A");
-			System.out.println(vetor);
-			
-			vetor.adiciona3(2, "X");
-			System.out.println(vetor);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
-	
-	
 }

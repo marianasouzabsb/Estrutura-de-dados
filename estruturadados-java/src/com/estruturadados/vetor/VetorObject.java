@@ -1,37 +1,38 @@
 package com.estruturadados.vetor;
 
-
-public class Vetor {
-
-	private String[] elementos;
+public class VetorObject {
+	
+	
+	private Object[] elementos;
 	private int tamanho;
-
+	
 	// Construtor
-	public Vetor(int capacidade) {
-		this.elementos = new String[capacidade];
+	
+	public VetorObject(int capacidade) {
+		this.elementos = new Object[capacidade];
 		this.tamanho = 0;
 	}
 
 	//Metodo que adiciona dado no vetor	 
 
-	public void adiciona1(String elemento) {
+	public void adiciona1(Object elemento) {
 		for(int i = 0; i < this.elementos.length; i++) {
 			if (this.elementos[i] == null)  { 
 				this.elementos[i] = elemento; break; 
 			} 
 		} 
 	}
-
+	
 	//Método de busca de elemento por posição
-
-	public String busca(int posicao) {
+	
+	public Object busca(int posicao) {
 		if(!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posição inválida");
 		}
 		return this.elementos[posicao];
 	}
-
-	public int busca2(String elemento) {
+	
+	public int busca2(Object elemento) {
 		for(int i = 0; i < this.tamanho;i++) {
 			if(this.elementos[i].equals(elemento)) {
 				return i;
@@ -41,7 +42,7 @@ public class Vetor {
 
 	//Metodo que adiciona dado no vetor	sem percorrer todo o vetor
 
-	public void adiciona(String elemento) throws Exception {
+	public void adiciona(Object elemento) throws Exception {
 		this.aumentaCapacidade();
 		if(this.tamanho < this.elementos.length) {
 			this.elementos[this.tamanho] = elemento;
@@ -74,17 +75,17 @@ public class Vetor {
 		s.append("]");
 		return s.toString();
 	}
-
+	
 	//Metodo elemento em qualquer posicao do vetor
-
-	public boolean adiciona3(int posicao,String elemento) {
-
+	
+	public boolean adiciona3(int posicao,Object elemento) {
+		
 		if(!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posição inválida");
 		}
-
+		
 		this.aumentaCapacidade();
-
+		
 		for(int i  = this.tamanho-1; i >= posicao; i--) {
 			this.elementos[i+1] = this.elementos[i];
 		}
@@ -93,29 +94,29 @@ public class Vetor {
 		return true;
 	}
 	// Aumenta a capacidade do Vetor
-
+	
 	private void aumentaCapacidade(){
 		if(this.tamanho == this.elementos.length) {
-
-			String[] elementoNovos = new String[this.elementos.length * 2];
+			
+			Object[] elementoNovos = new Object[this.elementos.length * 2];
 			for (int i = 0; i < this.elementos.length; i ++) {
 				elementoNovos[i] = this.elementos[i];
 			}
 			this.elementos=  elementoNovos;
 		}
 	}
-
+	
 	//Metodo Remove
-
+	
 	public void remove(int posicao) {
 		if(!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posição inválida");
 		}
 		for(int i = posicao; i < this.tamanho - 1; i++) {
-
+			
 			this.elementos[i] = this.elementos[i+1];
 		}
 		this.tamanho--;
 	}
-	//	
+	
 }
