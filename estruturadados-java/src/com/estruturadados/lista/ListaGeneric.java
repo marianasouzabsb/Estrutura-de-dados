@@ -31,7 +31,8 @@ public class ListaGeneric<T> {
 		return this.elementos[posicao];
 	}
 
-	public int busca2(T elemento) {
+	public int busca(T elemento) {
+		
 		for(int i = 0; i < this.tamanho;i++) {
 			if(this.elementos[i].equals(elemento)) {
 				return i;
@@ -39,6 +40,9 @@ public class ListaGeneric<T> {
 		}return -1;
 	}
 
+	public boolean contem(T elemento) {
+		return busca(elemento) > -1;
+	}
 	//Metodo que adiciona dado no vetor	sem percorrer todo o vetor
 
 	public void adiciona(T elemento) throws Exception {
