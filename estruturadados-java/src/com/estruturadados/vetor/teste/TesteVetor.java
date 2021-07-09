@@ -30,5 +30,6 @@ public class TesteVetor {
 		System.out.println("Busca por indice: " + vetor.busca(3));
 		System.out.println("Busca por elemento: " + vetor.busca2("elemento 2"));
 	}
+	
 
 }

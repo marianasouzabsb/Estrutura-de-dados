@@ -2,7 +2,6 @@ package com.estruturadados.pilha;
 
 public class EstruturaEstatica<T> {
 
-
 	protected T[] elementos;
 	protected int tamanho;
 
@@ -23,7 +22,6 @@ public class EstruturaEstatica<T> {
 			this.tamanho++;
 			return true;
 		} return false;	
-
 	}
 
 	//add em qualquer posição
@@ -78,5 +76,16 @@ public class EstruturaEstatica<T> {
 
 	public boolean estaVazia() {
 		return this.tamanho == 0;
+	}
+	
+	public void remove(int posicao) {
+		if(!(posicao >= 0 && posicao < tamanho)) {
+			throw new IllegalArgumentException("Posição inválida");
+		}
+		for(int i = posicao; i < this.tamanho - 1; i++) {
+
+			this.elementos[i] = this.elementos[i+1];
+		}
+		this.tamanho--;
 	}
 }

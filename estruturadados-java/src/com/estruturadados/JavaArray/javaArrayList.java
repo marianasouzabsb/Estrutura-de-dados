@@ -21,6 +21,17 @@ public class javaArrayList {
 		System.out.println(arrayList.contains("f"));
 		System.out.println(arrayList.toString());
 		System.out.println(arrayList.lastIndexOf("c"));
+		
+		ArrayList<Integer> arrayList2 = new ArrayList<>();
+		
+		arrayList2.add(10);
+		
+		for(int i = 20; i <=  70; i++ ){ 
+			
+			System.out.println(i * 10);
+			
+			
+		}
 	}
 
 }
